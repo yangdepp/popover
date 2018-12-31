@@ -1,36 +1,43 @@
-.wrapper {
+#wrapper {
   position: relative;
   left: 50%;
-  display: inline-block;
 }
 
-.popover {
-  border: 1px solid red;
-  position: absolute;
-  left: 100%;
-  top: 0;
-  white-space: nowrap;
-  padding: 10px;
-  margin-left: 10px;
-  background: white;
+#wrapper #dialog {
   display: none;
 }
 
-.popover::before {
+#wrapper #dialog.active {
+  display: block;
   position: absolute;
-  right: 100%;
-  top: 5px;
-  border: 10px solid transparent;
-  border-right-color: red;
-  content: '';
+  top: 0;
+  left: 60px;
+  width: 100px;
+  height: 100px;
+  border: 1px solid;
+  background: white;
 }
 
-.popover::after {
-  position: absolute;
-  right: 100%;
-  top: 5px;
-  border: 10px solid transparent;
-  border-right-color: white;
+#wrapper #dialog::before {
   content: '';
-  margin-right: -1px;
+  position: absolute;
+  top: 5px;
+  right: 100%;
+  display: block;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-right: 10px solid black;
+}
+
+#wrapper #dialog::after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  right: 99%;
+  display: block;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-right: 10px solid white;
 }

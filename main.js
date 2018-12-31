@@ -1,10 +1,13 @@
-clickMe.addEventListener('click', function (e) {
-  popover.style.display = 'block'
-})
-wrapper.addEventListener('click', function (e) {
-  e.stopPropagation()
-})
+$('button').on('click', e => {
+  $('#dialog').toggleClass('active')
 
-document.addEventListener('click', function () {
-  popover.style.display = 'none'
+  $('#wrapper').on('click', e => {
+    e.stopPropagation()
+  })
+
+  setTimeout(() => {
+    $(document).one('click', () => {
+      $('#dialog').removeClass('active')
+    })
+  }, 0)
 })
