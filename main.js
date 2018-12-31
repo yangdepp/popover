@@ -1,3 +1,5 @@
+
+// 解决bug
 $('button').on('click', e => {
   $('#dialog').toggleClass('active')
 
